@@ -9,23 +9,55 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Titillium Web', sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-gray-50 text-gray-800">
-    <!-- Header / Navigasi Atas -->
-    <div id="header-placeholder"></div>
-    
+    <header class="bg-white shadow sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between py-4 px-6">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl font-bold text-blue-700">🎓 SMA Negeri [Nama Sekolah]</span>
+            </div>
+            <div class="hidden md:flex items-center gap-6">
+                <nav class="flex gap-6 text-sm font-medium">
+                    <a href="index.html" class="hover:text-blue-700">Beranda</a>
+                    <a href="about.html" class="hover:text-blue-700">Tentang Kami</a>
+                    <a href="program.html" class="hover:text-blue-700">Program</a>
+                    <a href="registration.html" class="hover:text-blue-700">Pendaftaran</a>
+                    <a href="news.html" class="hover:text-blue-700">Berita</a>
+                    <a href="gallery.html" class="hover:text-blue-700">Galeri</a>
+                    <a href="contact.html" class="hover:text-blue-700">Kontak</a>
+                </nav>
+                <a href="registration.html" class="ml-4 px-5 py-2 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-800 transition">Daftar Sekarang</a>
+            </div>
+            <button class="md:hidden ml-4" id="menuBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden px-6 pb-4" id="mobileMenu">
+            <nav class="flex flex-col gap-3">
+                <a href="index.html" class="hover:text-blue-700">Beranda</a>
+                <a href="about.html" class="hover:text-blue-700">Tentang Kami</a>
+                <a href="program.html" class="hover:text-blue-700">Program</a>
+                <a href="registration.html" class="hover:text-blue-700">Pendaftaran</a>
+                <a href="news.html" class="hover:text-blue-700">Berita</a>
+                <a href="gallery.html" class="hover:text-blue-700">Galeri</a>
+                <a href="contact.html" class="hover:text-blue-700">Kontak</a>
+                <!-- Daftar Sekarang button only on mobile -->
+                <a href="registration.html" class="mt-3 w-full block text-center px-5 py-2 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-800 transition md:hidden">Daftar Sekarang</a>
+            </nav>
+        </div>
+    </header>
+
     <!-- Hero Section -->
     <section id="beranda" class="relative bg-blue-700 text-white min-h-[60vh] flex flex-col items-center justify-center text-center overflow-hidden py-20 px-4 md:min-h-screen">
         <div class="absolute inset-0 w-full h-full">
-            <img id="heroImg1" src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=1200&q=80" alt="Sekolah 1" class="hero-img absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" style="z-index:1;" />
-            <img id="heroImg2" src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80" alt="Sekolah 2" class="hero-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" style="z-index:1;" />
-            <img id="heroImg3" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" alt="Sekolah 3" class="hero-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" style="z-index:1;" />
+            <img id="heroImg1" src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=1200&q=80" alt="Sekolah 1" class="hero-img absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" />
+            <img id="heroImg2" src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80" alt="Sekolah 2" class="hero-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
+            <img id="heroImg3" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" alt="Sekolah 3" class="hero-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" />
             <div class="absolute inset-0 bg-black/70 z-10"></div>
         </div>
         <div class="relative z-20 max-w-2xl mx-auto w-full">
@@ -36,21 +68,6 @@
                 <a href="#pendaftaran" class="px-6 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-lg shadow hover:bg-yellow-300 transition text-sm md:text-base">Daftar Sekarang</a>
             </div>
         </div>
-        <script>
-        // Hero image fade animation
-        const heroImgs = [
-            document.getElementById('heroImg1'),
-            document.getElementById('heroImg2'),
-            document.getElementById('heroImg3')
-        ];
-        let heroIdx = 0;
-        setInterval(() => {
-            const prevIdx = heroIdx;
-            heroIdx = (heroIdx + 1) % heroImgs.length;
-            heroImgs[prevIdx].style.opacity = 0;
-            heroImgs[heroIdx].style.opacity = 1;
-        }, 5000);
-        </script>
     </section>
 
     <!-- Tentang Sekolah -->
@@ -67,7 +84,7 @@
         </div>
         <div class="flex flex-col gap-4">
             <div class="w-full aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
-                <iframe class="w-full h-56 md:h-80 lg:h-96" src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Profil Sekolah" frameborder="0" allowfullscreen style="min-height:220px;"></iframe>
+                <iframe class="w-full h-56 md:h-80 lg:h-96" src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Profil Sekolah" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -135,126 +152,89 @@
 
     <!-- Testimoni -->
     <section id="testimoni" class="bg-gray-100 py-16">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-blue-700 text-center">Testimoni</h2>
-                <p class="text-md text-gray-600 mb-6 text-center">Cerita dan pengalaman dari alumni, siswa, orang tua, dan guru</p>
-                <div class="relative">
-                    <button id="testiPrev" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-2 hover:bg-blue-100 transition hidden md:block" aria-label="Sebelumnya">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-                    </button>
-                    <div id="testiSlider" class="overflow-hidden">
-                        <div id="testiTrack" class="flex transition-transform duration-500 ease-in-out" style="will-change: transform;">
-                            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alumni" class="w-16 h-16 rounded-full mb-3">
-                                <p class="italic mb-2">“Belajar di SMA Negeri [Nama Sekolah] mengubah hidup saya. Guru-gurunya sangat peduli dan mendukung.”</p>
-                                <span class="font-semibold">Andi, Alumni 2022</span>
-                            </div>
-                            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Orang Tua" class="w-16 h-16 rounded-full mb-3">
-                                <p class="italic mb-2">“Lingkungan sekolah sangat positif dan mendukung perkembangan anak saya.”</p>
-                                <span class="font-semibold">Ibu Sari, Orang Tua</span>
-                            </div>
-                            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
-                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Siswa" class="w-16 h-16 rounded-full mb-3">
-                                <p class="italic mb-2">“Fasilitas lengkap dan banyak kegiatan seru di sekolah ini!”</p>
-                                <span class="font-semibold">Budi, Siswa Aktif</span>
-                            </div>
-                            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Alumni" class="w-16 h-16 rounded-full mb-3">
-                                <p class="italic mb-2">“Saya bangga menjadi alumni sekolah ini. Banyak pengalaman berharga!”</p>
-                                <span class="font-semibold">Dewi, Alumni 2021</span>
-                            </div>
-                            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
-                                <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Guru" class="w-16 h-16 rounded-full mb-3">
-                                <p class="italic mb-2">“Siswa-siswi di sini sangat antusias dan kreatif.”</p>
-                                <span class="font-semibold">Pak Rudi, Guru</span>
-                            </div>
-                            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
-                                <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Orang Tua" class="w-16 h-16 rounded-full mb-3">
-                                <p class="italic mb-2">“Program sekolahnya sangat bervariasi dan bermanfaat.”</p>
-                                <span class="font-semibold">Bu Lina, Orang Tua</span>
-                            </div>
-                            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
-                                <img src="https://randomuser.me/api/portraits/men/23.jpg" alt="Siswa" class="w-16 h-16 rounded-full mb-3">
-                                <p class="italic mb-2">“Banyak teman dan guru yang inspiratif.”</p>
-                                <span class="font-semibold">Rizky, Siswa</span>
-                            </div>
-                            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
-                                <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Alumni" class="w-16 h-16 rounded-full mb-3">
-                                <p class="italic mb-2">“Kegiatan ekstrakurikulernya seru dan mendidik.”</p>
-                                <span class="font-semibold">Sinta, Alumni 2020</span>
-                            </div>
-                            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
-                                <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Siswa" class="w-16 h-16 rounded-full mb-3">
-                                <p class="italic mb-2">“Lingkungan sekolahnya nyaman dan aman.”</p>
-                                <span class="font-semibold">Fajar, Siswa</span>
-                            </div>
-                            <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
-                                <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Orang Tua" class="w-16 h-16 rounded-full mb-3">
-                                <p class="italic mb-2">“Anak saya berkembang pesat sejak sekolah di sini.”</p>
-                                <span class="font-semibold">Ibu Maya, Orang Tua</span>
-                            </div>
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-blue-700 text-center">Testimoni</h2>
+            <p class="text-md text-gray-600 mb-6 text-center">Cerita dan pengalaman dari alumni, siswa, orang tua, dan guru</p>
+            <div class="relative">
+                <button id="testiPrev" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-2 hover:bg-blue-100 transition hidden md:block" aria-label="Sebelumnya">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <div id="testiSlider" class="overflow-hidden">
+                    <div id="testiTrack" class="flex transition-transform duration-500 ease-in-out" style="will-change: transform;">
+                        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alumni" class="w-16 h-16 rounded-full mb-3">
+                            <p class="italic mb-2">“Belajar di SMA Negeri [Nama Sekolah] mengubah hidup saya. Guru-gurunya sangat peduli dan mendukung.”</p>
+                            <span class="font-semibold">Andi, Alumni 2022</span>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Orang Tua" class="w-16 h-16 rounded-full mb-3">
+                            <p class="italic mb-2">“Lingkungan sekolah sangat positif dan mendukung perkembangan anak saya.”</p>
+                            <span class="font-semibold">Ibu Sari, Orang Tua</span>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Siswa" class="w-16 h-16 rounded-full mb-3">
+                            <p class="italic mb-2">“Fasilitas lengkap dan banyak kegiatan seru di sekolah ini!”</p>
+                            <span class="font-semibold">Budi, Siswa Aktif</span>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Alumni" class="w-16 h-16 rounded-full mb-3">
+                            <p class="italic mb-2">“Saya bangga menjadi alumni sekolah ini. Banyak pengalaman berharga!”</p>
+                            <span class="font-semibold">Dewi, Alumni 2021</span>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
+                            <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="Guru" class="w-16 h-16 rounded-full mb-3">
+                            <p class="italic mb-2">“Siswa-siswi di sini sangat antusias dan kreatif.”</p>
+                            <span class="font-semibold">Pak Rudi, Guru</span>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
+                            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Orang Tua" class="w-16 h-16 rounded-full mb-3">
+                            <p class="italic mb-2">“Program sekolahnya sangat bervariasi dan bermanfaat.”</p>
+                            <span class="font-semibold">Bu Lina, Orang Tua</span>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
+                            <img src="https://randomuser.me/api/portraits/men/23.jpg" alt="Siswa" class="w-16 h-16 rounded-full mb-3">
+                            <p class="italic mb-2">“Banyak teman dan guru yang inspiratif.”</p>
+                            <span class="font-semibold">Rizky, Siswa</span>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
+                            <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Alumni" class="w-16 h-16 rounded-full mb-3">
+                            <p class="italic mb-2">“Kegiatan ekstrakurikulernya seru dan mendidik.”</p>
+                            <span class="font-semibold">Sinta, Alumni 2020</span>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
+                            <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Siswa" class="w-16 h-16 rounded-full mb-3">
+                            <p class="italic mb-2">“Lingkungan sekolahnya nyaman dan aman.”</p>
+                            <span class="font-semibold">Fajar, Siswa</span>
+                        </div>
+                        <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center min-w-[320px] max-w-xs mx-2">
+                            <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Orang Tua" class="w-16 h-16 rounded-full mb-3">
+                            <p class="italic mb-2">“Anak saya berkembang pesat sejak sekolah di sini.”</p>
+                            <span class="font-semibold">Ibu Maya, Orang Tua</span>
                         </div>
                     </div>
-                    <button id="testiNext" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-2 hover:bg-blue-100 transition hidden md:block" aria-label="Berikutnya">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                    </button>
                 </div>
-                <div class="flex justify-center gap-2 mt-6 md:hidden">
-                    <button id="testiPrevSm" class="bg-white shadow rounded-full p-2 hover:bg-blue-100 transition" aria-label="Sebelumnya">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-                    </button>
-                    <button id="testiNextSm" class="bg-white shadow rounded-full p-2 hover:bg-blue-100 transition" aria-label="Berikutnya">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                    </button>
-                </div>
+                <button id="testiNext" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-2 hover:bg-blue-100 transition hidden md:block" aria-label="Berikutnya">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
-        </section>
-
-        <script>
-        // Testimoni slider logic
-        (function() {
-            const track = document.getElementById('testiTrack');
-            const prev = document.getElementById('testiPrev');
-            const next = document.getElementById('testiNext');
-            const prevSm = document.getElementById('testiPrevSm');
-            const nextSm = document.getElementById('testiNextSm');
-            const itemCount = 10;
-            let current = 0;
-            function getShowCount() {
-                return window.innerWidth >= 768 ? 3 : 1;
-            }
-            function updateSlider() {
-                const show = getShowCount();
-                const itemWidth = track.children[0].offsetWidth + 16; // mx-2 = 8px left+right
-                const container = document.getElementById('testiSlider');
-                const containerWidth = container.offsetWidth;
-                const totalWidth = itemCount * itemWidth;
-                const maxOffset = Math.max(0, totalWidth - containerWidth);
-                let offset = current * itemWidth;
-                if(offset > maxOffset) {
-                    offset = maxOffset;
-                    current = Math.round(offset / itemWidth);
-                }
-                track.style.transform = `translateX(-${offset}px)`;
-            }
-            function nextSlide() {
-                current++;
-                updateSlider();
-            }
-            function prevSlide() {
-                current--;
-                if(current < 0) current = 0;
-                updateSlider();
-            }
-            if(next) next.addEventListener('click', nextSlide);
-            if(prev) prev.addEventListener('click', prevSlide);
-            if(nextSm) nextSm.addEventListener('click', nextSlide);
-            if(prevSm) prevSm.addEventListener('click', prevSlide);
-            window.addEventListener('resize', updateSlider);
-            updateSlider();
-        })();
-        </script>
+            <div class="flex justify-center gap-2 mt-6 md:hidden">
+                <button id="testiPrevSm" class="bg-white shadow rounded-full p-2 hover:bg-blue-100 transition" aria-label="Sebelumnya">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="testiNextSm" class="bg-white shadow rounded-full p-2 hover:bg-blue-100 transition" aria-label="Berikutnya">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
 
     <!-- Galeri Sekolah -->
     <section id="galeri" class="container mx-auto py-16 px-6">
@@ -272,8 +252,8 @@
 
     <!-- Call to Action / Pendaftaran -->
     <section id="pendaftaran" class="relative bg-blue-700 text-white py-16 text-center overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" alt="Pendaftaran" class="absolute inset-0 w-full h-full object-cover opacity-40 pointer-events-none" style="z-index:1;" />
-        <div class="absolute inset-0 bg-blue-900/70" style="z-index:2;"></div>
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" alt="Pendaftaran" class="absolute inset-0 w-full h-full object-cover pendaftaran-bg" />
+        <div class="absolute inset-0 pendaftaran-overlay"></div>
         <div class="relative z-10">
             <h2 class="text-3xl font-bold mb-2">Siap Bergabung dengan Kami?</h2>
             <p class="text-lg text-gray-200 mb-8">Ayo daftar dan wujudkan masa depan cerah bersama kami!</p>
@@ -282,19 +262,45 @@
     </section>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
-    <script>
-    // Header & Footer include
-    function includeHTML(id, file) {
-        fetch(file)
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById(id).innerHTML = data;
-            });
-    }
-    includeHTML('header-placeholder', 'header.html');
-    includeHTML('footer-placeholder', 'footer.html');
-    </script>
+    <!-- Footer Komponen Reusable -->
+    <footer id="kontak" class="bg-gray-900 text-gray-200 py-10">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="font-bold text-lg mb-2">Kontak Sekolah</h3>
+                <p>Jl. Pendidikan No. 123, Kota, Provinsi</p>
+                <p>Email: info@smanschool.sch.id</p>
+                <p>Telepon: (021) 12345678</p>
+                <p>WhatsApp: 0812-3456-7890</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-2">Link Cepat</h3>
+                <ul class="space-y-1">
+                    <li><a href="#pendaftaran" class="hover:text-yellow-400">PPDB</a></li>
+                    <li><a href="#" class="hover:text-yellow-400">Kalender Akademik</a></li>
+                    <li><a href="#" class="hover:text-yellow-400">E-Learning</a></li>
+                </ul>
+                <div class="flex gap-3 mt-4">
+                    <a href="#" class="hover:text-yellow-400"><svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                            <path d="M22.46 6c-.77.35-1.6.58-2.47.69a4.3 4.3 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04A4.28 4.28 0 0 0 16.11 4c-2.37 0-4.29 1.92-4.29 4.29 0 .34.04.67.11.99C7.69 9.13 4.07 7.38 1.64 4.7c-.37.64-.58 1.38-.58 2.17 0 1.5.76 2.82 1.92 3.6a4.28 4.28 0 0 1-1.94-.54v.05c0 2.1 1.5 3.85 3.5 4.25-.36.1-.74.16-1.13.16-.28 0-.54-.03-.8-.08.54 1.7 2.1 2.94 3.95 2.97A8.6 8.6 0 0 1 2 19.54c-.29 0-.57-.02-.85-.05A12.13 12.13 0 0 0 8.29 21.5c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54A8.36 8.36 0 0 0 24 4.59a8.19 8.19 0 0 1-2.36.65 4.28 4.28 0 0 0 1.88-2.37z" />
+                        </svg></a>
+                    <a href="#" class="hover:text-yellow-400"><svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                            <path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 4.41 3.6 8.07 8.24 8.93.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.54-1.37-1.32-1.74-1.32-1.74-1.08-.74.08-.73.08-.73 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.78 1.3 3.46.99.11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.97 0-1.32.47-2.39 1.23-3.23-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.01 2.05.14 3 .4 2.3-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.23 0 4.64-2.8 5.67-5.47 5.97.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C18.36 20.07 22 16.41 22 12c0-5.5-4.46-9.96-9.96-9.96z" />
+                        </svg></a>
+                    <a href="#" class="hover:text-yellow-400"><svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+                            <path d="M21.54 7.2c-.13-.49-.52-.88-1.01-1.01C19.13 6 12 6 12 6s-7.13 0-8.53.19c-.49.13-.88.52-1.01 1.01C2 8.6 2 12 2 12s0 3.4.19 4.8c.13.49.52.88 1.01 1.01C4.87 18 12 18 12 18s7.13 0 8.53-.19c.49-.13.88-.52 1.01-1.01.19-1.4.19-4.8.19-4.8s0-3.4-.19-4.8zM9.75 15.02V8.98l6.5 3.02-6.5 3.02z" />
+                        </svg></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-2">Peta Lokasi</h3>
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.920857858969!2d106.8271533153106!3d-6.175392995527998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e7e7e7e7e7%3A0x7e7e7e7e7e7e7e7e!2sMonas!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8 text-sm text-gray-400">&copy; 2025 SMA Negeri [Nama Sekolah]. All rights reserved.</div>
+    </footer>
+    <script src="main.js"></script>
 </body>
 
 </html>
