@@ -1,0 +1,48 @@
+<!-- Header Komponen Reusable -->
+<header class="bg-white shadow sticky top-0 z-50">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+        <div class="flex items-center gap-2">
+            <span class="text-2xl font-bold text-blue-700">🎓 SMA Negeri [Nama Sekolah]</span>
+        </div>
+        <div class="hidden md:flex items-center gap-6">
+            <nav class="flex gap-6 text-sm font-medium">
+                <a href="index.html" class="hover:text-blue-700">Beranda</a>
+                <a href="about.html" class="hover:text-blue-700">Tentang Kami</a>
+                <a href="program.html" class="hover:text-blue-700">Program</a>
+                <a href="registration.html" class="hover:text-blue-700">Pendaftaran</a>
+                <a href="news.html" class="hover:text-blue-700">Berita</a>
+                <a href="gallery.html" class="hover:text-blue-700">Galeri</a>
+                <a href="contact.html" class="hover:text-blue-700">Kontak</a>
+            </nav>
+            <a href="registration.html" class="ml-4 px-5 py-2 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-800 transition">Daftar Sekarang</a>
+        </div>
+        <button class="md:hidden ml-4" id="menuBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="md:hidden hidden px-6 pb-4" id="mobileMenu">
+        <nav class="flex flex-col gap-3">
+            <a href="index.html" class="hover:text-blue-700">Beranda</a>
+            <a href="about.html" class="hover:text-blue-700">Tentang Kami</a>
+            <a href="program.html" class="hover:text-blue-700">Program</a>
+            <a href="registration.html" class="hover:text-blue-700">Pendaftaran</a>
+            <a href="news.html" class="hover:text-blue-700">Berita</a>
+            <a href="gallery.html" class="hover:text-blue-700">Galeri</a>
+            <a href="contact.html" class="hover:text-blue-700">Kontak</a>
+            <!-- Daftar Sekarang button only on mobile -->
+            <a href="registration.html" class="mt-3 w-full block text-center px-5 py-2 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-800 transition md:hidden">Daftar Sekarang</a>
+        </nav>
+    </div>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if(menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</header>

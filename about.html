@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - SMA Negeri [Nama Sekolah]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Titillium Web', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div id="header-placeholder"></div>
+    <section class="container mx-auto py-16 px-6 min-h-screen">
+        <h1 class="text-4xl font-bold text-blue-700 mb-6 text-center">Tentang SMA Negeri [Nama Sekolah]</h1>
+        <p class="text-lg text-gray-600 mb-8 text-center">Profil, visi, misi, dan keunggulan sekolah kami</p>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h2 class="text-2xl font-bold mb-4">Profil Sekolah</h2>
+                <p class="text-base text-gray-600 mb-4">Informasi umum, sejarah, dan pencapaian sekolah</p>
+                <p class="mb-4">SMA Negeri [Nama Sekolah] berdiri sejak tahun XXXX dan telah menjadi institusi pendidikan unggulan di wilayah ini. Kami berkomitmen untuk mencetak generasi muda yang cerdas, berkarakter, dan siap menghadapi tantangan global.</p>
+                <ul class="mb-6 space-y-2">
+                    <li>✅ Akreditasi <span class="font-bold">A</span></li>
+                    <li>👨‍🎓 <span class="font-bold">1200+</span> Siswa & <span class="font-bold">80+</span> Guru</li>
+                    <li>🏆 Prestasi: Olimpiade Sains, Juara Futsal, Lomba Robotik</li>
+                </ul>
+                <h2 class="text-2xl font-bold mb-4 mt-8">Visi & Misi</h2>
+                <p class="text-base text-gray-600 mb-4">Arah, tujuan, dan komitmen SMA Negeri [Nama Sekolah]</p>
+                <p class="mb-2"><span class="font-bold">Visi:</span> Menjadi sekolah rujukan nasional dengan lulusan berprestasi dan berakhlak mulia.</p>
+                <p class="mb-2"><span class="font-bold">Misi:</span></p>
+                <ul class="list-disc pl-6 mb-6">
+                    <li>Menyelenggarakan pendidikan berkualitas dan inovatif.</li>
+                    <li>Mengembangkan karakter dan potensi siswa secara optimal.</li>
+                    <li>Meningkatkan prestasi akademik dan non-akademik.</li>
+                    <li>Menjalin kerja sama dengan berbagai pihak untuk kemajuan sekolah.</li>
+                </ul>
+            </div>
+            <div class="flex flex-col gap-4">
+                <div class="w-full aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+                    <iframe class="w-full h-56 md:h-80 lg:h-96" src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Profil Sekolah" frameborder="0" allowfullscreen style="min-height:220px;"></iframe>
+                </div>
+                <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80" alt="Sekolah" class="rounded-lg shadow w-full h-48 object-cover">
+            </div>
+        </div>
+    </section>
+    <div id="footer-placeholder"></div>
+    <script>
+    // Header & Footer include
+    function includeHTML(id, file) {
+        fetch(file)
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById(id).innerHTML = data;
+            });
+    }
+    includeHTML('header-placeholder', 'header.html');
+    includeHTML('footer-placeholder', 'footer.html');
+    </script>
+</body>
+</html>
