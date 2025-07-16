@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blank Page</title>
+    <title>Contact Us - SMA Negeri [School Name]</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,8 +51,56 @@
             </nav>
         </div>
     </header>
-    <main class="flex-grow flex items-center justify-center">
-        <!-- Blank template -->
+    <main class="flex-grow">
+        <section class="container mx-auto py-16 px-6 min-h-[70vh]">
+            <h1 class="text-3xl md:text-4xl font-bold text-blue-700 text-center mb-2">Contact Us</h1>
+            <p class="text-md text-gray-600 mb-10 text-center max-w-xl mx-auto">Have questions, suggestions, or want to collaborate? Reach out to us using the form below or via our contact information. We look forward to connecting with you!</p>
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold mb-1" for="name">Name</label>
+                            <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-1" for="email">Email</label>
+                            <input class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none" type="email" id="email" name="email" placeholder="you@email.com" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-1" for="message">Message</label>
+                            <textarea class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none min-h-[120px]" id="message" name="message" placeholder="Type your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-blue-700 text-white font-semibold rounded-lg shadow hover:bg-blue-800 transition">Send Message</button>
+                    </form>
+                </div>
+                <div class="flex flex-col gap-8">
+                    <div class="bg-blue-50 rounded-lg p-6 shadow flex flex-col gap-2">
+                        <h2 class="font-bold text-lg text-blue-700 mb-2">School Contact</h2>
+                        <div class="flex items-center gap-2"><span class="font-semibold">Address:</span> Jl. Pendidikan No. 123, City, Province</div>
+                        <div class="flex items-center gap-2"><span class="font-semibold">Email:</span> info@smanschool.sch.id</div>
+                        <div class="flex items-center gap-2"><span class="font-semibold">Phone:</span> (021) 12345678</div>
+                        <div class="flex items-center gap-2"><span class="font-semibold">WhatsApp:</span> 0812-3456-7890</div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-4">
+                        <h2 class="font-bold text-lg text-blue-700 mb-2">Find Us</h2>
+                        <div class="rounded-lg overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.920857858969!2d106.8271533153106!3d-6.175392995527998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e7e7e7e7e7%3A0x7e7e7e7e7e7e7e7e!2sMonas!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 mt-2">
+                        <a href="#" class="text-blue-700 hover:text-blue-900" title="Instagram"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
+                                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1 0 2a1 1 0 0 1 0-2z"></path>
+                            </svg></a>
+                        <a href="#" class="text-blue-700 hover:text-blue-900" title="Facebook"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
+                                <path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89c1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.632.771-1.632 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12"></path>
+                            </svg></a>
+                        <a href="#" class="text-blue-700 hover:text-blue-900" title="YouTube"><svg fill="currentColor" viewBox="0 0 24 24" class="w-7 h-7">
+                                <path d="M21.8 8.001a2.75 2.75 0 0 0-1.936-1.945C18.13 6 12 6 12 6s-6.13 0-7.864.056A2.75 2.75 0 0 0 2.2 8.001 28.6 28.6 0 0 0 2 12a28.6 28.6 0 0 0 .2 3.999a2.75 2.75 0 0 0 1.936 1.945C5.87 18 12 18 12 18s6.13 0 7.864-.056a2.75 2.75 0 0 0 1.936-1.945A28.6 28.6 0 0 0 22 12a28.6 28.6 0 0 0-.2-3.999zM10 15.5v-7l6 3.5l-6 3.5z"></path>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="bg-gray-900 text-gray-200 py-10">
         <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
