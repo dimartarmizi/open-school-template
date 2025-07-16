@@ -1,7 +1,13 @@
 # Open School Website Template
-<img width="1920" height="2000" alt="SMA-Negeri-School-Name--07-16-2025_10_55_PM" src="https://github.com/user-attachments/assets/79d6ad05-4e52-4ab0-b57f-b8232602b243" />
+![SMA-Negeri-School-Name--07-16-2025_10_55_PM](https://github.com/user-attachments/assets/05e9ccc0-dd3d-4941-90f6-f88adb8614cb)
 
 A modern, responsive, and customizable website template for schools, built with HTML, Tailwind CSS, and vanilla JavaScript. This template is designed to help schools quickly launch a professional online presence with minimal setup.
+
+## Demo
+
+See a live demo of this school website template to explore its layout, features, and responsiveness in real-time. The demo shows the main pages, image sliders, gallery, and other components included in the template.
+
+[🌐 Demo Website](https://dimartarmizi.github.io/open-school-website-template/)
 
 ## Features
 
