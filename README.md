@@ -1,4 +1,5 @@
 # Open School Website Template
+<img width="1920" height="2000" alt="SMA-Negeri-School-Name--07-16-2025_10_55_PM" src="https://github.com/user-attachments/assets/79d6ad05-4e52-4ab0-b57f-b8232602b243" />
 
 A modern, responsive, and customizable website template for schools, built with HTML, Tailwind CSS, and vanilla JavaScript. This template is designed to help schools quickly launch a professional online presence with minimal setup.
 
