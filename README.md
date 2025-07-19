@@ -25,7 +25,7 @@ See a live demo of this school website template to explore its layout, features,
 
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/yourusername/open-school-website-template.git
+   git clone https://github.com/dimartarmizi/open-school-website-template.git
    ```
 2. **Open the folder** in your code editor or web server (e.g., [Laragon](https://laragon.org/), XAMPP, or simply open `index.html` in your browser).
 3. **Customize content**: Edit the HTML files and `style.css` as needed for your school.
